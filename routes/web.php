@@ -23,6 +23,8 @@ Route::get('/login', [LoginController::class, 'loginview'])->name('login');
 
 Route::get('/register', [RegisterController::class, 'registerform'])->name('register');
 
+Route::post('/register', [RegisterController::class, 'register']);
+
 
 
 

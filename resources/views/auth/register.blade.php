@@ -24,7 +24,7 @@
                   </div>
                 </div>
               </div>
-              <form action="">
+              <form action="{{ route('register')}}" method="POST">
 
                 @csrf
                 {{--  composent input --}}
