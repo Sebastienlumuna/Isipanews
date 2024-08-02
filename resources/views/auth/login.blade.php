@@ -23,7 +23,7 @@
                   </div>
                 </div>
               </div>
-              <form action="#!">
+              <form action="{{ route('login')}}" method="POST">
 
                 @csrf
                 {{--  composent input --}}
@@ -33,17 +33,24 @@
                 <x-input name="password" label="Mot de passe " type="password" />
 
                 <div class="col-12 mt-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="remember" value="true" id="remember">
+                      <label class="form-check-label" for="remember">Remember me</label>
+                    </div>
+                  </div>
+
+                <div class="col-12 mt-3">
                     <div class="d-grid">
                       <button class="btn custom-btn w-100" type="submit">Log in now</button>
                     </div>
                   </div>
+
 
               </form>
               <div class="row mx-2">
                 <div class="col-12">
                   <div class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-end">
                     <a href="{{ route('register')}}" class="link-secondary text-decoration-none">Create new account</a>
-                    <a href="#!" class="link-secondary text-decoration-none">Forgot password</a>
                   </div>
                 </div>
               </div>
