@@ -30,7 +30,7 @@ Route::post('/register', [RegisterController::class, 'register']);
 
 
 Route::get('/home', [ClientController::class, 'index'])->name('Accueil');
-Route::get('/profil', [ClientController::class, 'profil'])->name('profil');
+Route::get('/profil', [ClientController::class, 'profilview'])->name('profil');
 
 
 

@@ -23,7 +23,7 @@ class ClientController extends Controller
         return view('client.index', compact('name'));
     }
 
-    public function proilview(){
+    public function profilview(){
 
         return view('client.profil');
     }
