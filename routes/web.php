@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/login', [LoginController::class, 'loginview'])->name('login');
 route::post('/login',[LoginController::class, 'login']);
-route::get('/logout',[LoginController::class, 'logout'])->name('logout');
+route::post('/logout',[LoginController::class, 'logout'])->name('logout');
 
 Route::get('/register', [RegisterController::class, 'registerform'])->name('register');
 
@@ -31,7 +31,8 @@ Route::post('/register', [RegisterController::class, 'register']);
 
 Route::get('/home', [ClientController::class, 'index'])->name('Accueil');
 Route::get('/profil', [ClientController::class, 'profilview'])->name('profil');
-
+Route::post('/update', [ClientController::class, 'updatepassword'])->name('update');
+Route::put('/update', [ClientController::class, 'updateprofil']);
 
 
 

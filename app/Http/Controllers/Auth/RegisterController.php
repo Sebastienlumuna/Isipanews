@@ -28,12 +28,12 @@ class RegisterController extends Controller
         $validated = $request->validate([
             'name' => ['required', 'string', 'between:5,255'],
             'email' => ['required', 'email', 'unique:users'],
-            'password' => ['required', 'string', 'min:8'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
 
         $validated['password'] = Hash::make($validated['password']);
       $user = User::create($validated);
-        
+
       Auth::login($user);
 
       return redirect()->route('Accueil')->with('sucess', 'Inscription réussi');

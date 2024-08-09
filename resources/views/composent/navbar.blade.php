@@ -26,9 +26,9 @@
                     </a>
                   </li>
                   <li>
-                    <a class="dropdown-item d-flex align-items-center" href="{{ route('logout')}}">
+                    <a class="dropdown-item d-flex align-items-center" href="{{ route('logout')}}" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class='bx bx-log-out' ></i>
-                      Se deconnecter
+                        Se deconnecter
                     </a>
                   </li>
                 </ul>
@@ -68,7 +68,7 @@
                     </a>
                   </li>
                   <li>
-                    <a class="dropdown-item d-flex align-items-center" href="{{ route('logout')}}">
+                    <a class="dropdown-item d-flex align-items-center" href="{{ route('logout')}}" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class='bx bx-log-out' ></i>
                         Se deconnecter
                     </a>
@@ -84,3 +84,5 @@
 
     </div>
 </nav>
+
+<x-modal/>
