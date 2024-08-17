@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Client\ClientController;
+use App\Http\Controllers\testrelationController;
 use App\Http\Controllers\Pagecontroller;
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +34,7 @@ Route::get('/home', [ClientController::class, 'index'])->name('Accueil');
 Route::get('/profil', [ClientController::class, 'profilview'])->name('profil');
 Route::post('/update', [ClientController::class, 'updatepassword'])->name('update');
 Route::put('/update', [ClientController::class, 'updateprofil']);
+
 
 
 

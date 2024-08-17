@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
+use App\Models\Post;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
@@ -23,9 +24,10 @@ class ClientController extends Controller
 
     public function index(){
 
+        $posts = Post::with('user', 'categorie')->orderBy('created_at', 'desc')->paginate(9);
         $user = Auth::user();
         $name = $user->name;
-        return view('client.index', compact('name'));
+        return view('client.index', compact('name', 'posts'));
     }
 
     public function profilview(){
