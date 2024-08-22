@@ -22,7 +22,7 @@ class ClientController extends Controller
     }
 
 
-    public function index(){
+  /*  public function index(){
 
         $posts = Post::with('user', 'categorie')->orderBy('created_at', 'desc')->paginate(9);
         $user = Auth::user();
@@ -30,6 +30,7 @@ class ClientController extends Controller
         return view('client.index', compact('name', 'posts'));
     }
 
+    */
     public function profilview(){
 
         return view('client.profil');

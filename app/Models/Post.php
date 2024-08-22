@@ -12,6 +12,11 @@ class Post extends Model
 {
     use HasFactory;
 
+    public function getRouteKeyName(): string
+    {
+        return 'Titre';
+    }
+
     public function categorie(): BelongsTo
     {
         return $this->belongsTo(Categorie::class);

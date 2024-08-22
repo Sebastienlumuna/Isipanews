@@ -20,6 +20,14 @@ class Pagecontroller extends Controller
         compact('posts')
     );
     }
+
+    public function show(Post $post ): View
+    {
+        return view('home.show',[
+            'post' => $post,
+        ]
+    );
+    }
     public function campus(){
         return view('home.campus');
     }
