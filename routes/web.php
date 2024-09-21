@@ -35,6 +35,9 @@ Route::get('/profil', [ClientController::class, 'profilview'])->name('profil');
 Route::post('/update', [ClientController::class, 'updatepassword'])->name('update');
 Route::put('/update', [ClientController::class, 'updateprofil']);
 
+Route::get('/campus', [Pagecontroller::class, 'campus'])->name('campus');
+
+Route::get('/contact', [Pagecontroller::class, 'contact'])->name('contact');
 
 
 
@@ -42,7 +45,4 @@ Route::get('/', [Pagecontroller::class, 'home'])->name('home');
 
 Route::get('/{post}', [Pagecontroller::class, 'show'])->name('show');
 
-Route::get('/campus', [Pagecontroller::class, 'campus'])->name('campus');
-
-Route::get('/contact', [Pagecontroller::class, 'contact'])->name('contact');
 

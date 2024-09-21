@@ -76,11 +76,12 @@
                 </div>
 
                 <section class="container">
-                 
+
                       <!-- Example post (repeat for each post) -->
 
                       <x-post :posts="$posts"/>
             </section>
+             {{ $posts->links('pagination::bootstrap-5') }}
 </main>
 
 

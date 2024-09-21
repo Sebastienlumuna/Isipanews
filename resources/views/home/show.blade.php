@@ -19,7 +19,7 @@
 
             </div>
 
-            <p class="mb-4">{{$post->Contenu }}</p>
+            <p class="mb-4">   {!! nl2br(e($post->Contenu)) !!}</p>
 
 
         </div>

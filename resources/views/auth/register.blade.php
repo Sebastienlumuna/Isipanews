@@ -20,7 +20,7 @@
                             {{ config('app.name')}}
                         </a>
                         </div>
-                        <h4 class="text-center">Welcome back you've been missed!</h4>
+                        <h4 class="text-center">Restez a l'écoute de tout</h4>
                     </div>
                     </div>
                 </div>
