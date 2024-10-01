@@ -34,7 +34,9 @@
                 </ul>
             </div>
                 @else
-                <a href="{{ route('login')}}" ><i class='bx bx-user bx-tada' ></i></a>
+                <div class="custom-icon">
+                    <a href="{{ route('login')}}" ><i class='bx bx-user' ></i></a>
+                </div>
             @endauth
         </div>
 
@@ -45,9 +47,6 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('login')}}">Evenements</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link @if(Request::route()->getname() == 'campus') active @endif" href="{{ route('campus')}}">Campus</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link @if (Request::route()->getname() == 'contact') active @endif" href="{{ route('contact')}}">Contact</a>
@@ -76,7 +75,9 @@
                 </ul>
             </div>
                 @else
-                <a href="{{ route('login')}}" ><i class='bx bx-user bx-tada' ></i></a>
+                <div class="custom-icon">
+                    <a href="{{ route('login')}}" ><i class='bx bx-user' ></i></a>
+                </div>
             @endauth
             </div>
         </div>

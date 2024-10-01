@@ -119,7 +119,7 @@ button {
 }
 
 a {
-  color: var(--p-color);
+  color: var(  --dark-color);
   text-decoration: none;
 }
 
@@ -396,7 +396,7 @@ strong {
 }
 
 .nav-link {
-  color: var(--p-color);
+  color: var(--dark-color);
   font-size: 16px;
   position: relative;
 }
@@ -789,8 +789,8 @@ section {
 -----------------------------------------*/
 .site-footer {
   background: var(--dark-color);
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .footer-menu {
@@ -818,7 +818,7 @@ section {
 
 .site-footer .social-icon-link:hover,
 .footer-menu-link:hover {
-  color: var(--white-color);
+  color: var(--primary-color);
 }
 
 .copyright-text {
