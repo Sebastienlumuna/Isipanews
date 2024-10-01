@@ -1,9 +1,10 @@
-<div class="col-12 mt-3 ">
-    <label for="{{ $id }}" class="form-label"> {{ $label}}  </label>
-    <input id="{{ $id}}" type="{{ $type}}" name="{{ $name }}" class="form-control @error($name) is-invalid @enderror" placeholder="entrez votre {{$name}}"  value="{{old($name)}}" required>
+<div class="form-floating mb-3">
+    <input name="{{ $name }}" type="{{ $type }}" class="form-control @error($name) is-invalid @enderror" id="{{ $id }}" placeholder="{{ $name }}" required>
+    <label for="{{ $id }}">{{ $label }}</label>
 
     @error($name)
     <div class="invalid-feedback" role="alert">
-        {{ $message }}</div>
-  </div>
-  @enderror
+        {{ $message }}
+    </div>
+    @enderror
+</div>

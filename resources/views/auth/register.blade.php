@@ -5,25 +5,15 @@
 
 @section('content')
 
-    <section class="bg-light p-3 p-md-4 p-xl-5 ">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-9 col-lg-7 col-xl-6 col-xxl-5">
-                    <div class="card border border-light-subtle rounded-4">
-                    <div class="card-body p-3 p-md-4 p-xl-5">
-                <div class="row">
-                    <div class="col-12">
-                    <div class="mb-5">
-                        <div class="text-center mb-4">
-                        <a href="{{ route('home')}}">
-                            <img src="{{ asset('images/img_logo.jpeg')}}" alt="BootstrapBrain Logo" width="50" height="57">
-                            {{ config('app.name')}}
-                        </a>
-                        </div>
-                        <h4 class="text-center">Restez a l'écoute de tout</h4>
-                    </div>
-                    </div>
-                </div>
+<div class="container vh-100 d-flex justify-content-center align-items-center">
+    <div class="row justify-content-center w-100">
+        <div class="col-lg-4 col-md-6 col-sm-8">
+            <div class="text-center mb-5">
+                <a href="{{ route('home') }}">
+                    <img src="{{ asset('images/img_logo.jpeg') }}" alt="BootstrapBrain Logo" width="50" height="57">
+                </a>
+                <h4 class="text-center">Sign up</h4>
+            </div>
                 <form action="{{ route('register')}}" method="POST">
 
                     @csrf
@@ -37,6 +27,9 @@
 
                     <x-input name="password_confirmation" label=" Confirmation du mot de passe " type="password" />
 
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <a href="{{ route('login') }}" class="text-decoration-none">se connecter </a>
+                    </div>
                     <div class="col-12 mt-3">
                         <div class="d-grid">
                         <button class="btn custom-btn w-100" type="submit">S'inscrire</button>
@@ -44,18 +37,9 @@
                     </div>
 
                 </form>
-                <div class="row mx-2">
-                    <div class="col-12">
-                    <div class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-end">
-                        <a href="{{ route('login')}}" class="link-secondary text-decoration-none">Se connecter</a>
-                    </div>
-                    </div>
-                </div>
-                </div>
-                </div>
-            </div>
-            </div>
+                <p class="text-center mt-3">Copyright © 2024 ISIP'A KOMORIKO</p>
         </div>
-        </div>
+    </div>
+</div>
     </section>
 @endsection

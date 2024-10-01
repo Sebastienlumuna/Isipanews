@@ -4,62 +4,34 @@
 
 @section('content')
 
-<section class="bg-light p-3 p-md-4 p-xl-5 ">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-9 col-lg-7 col-xl-6 col-xxl-5">
-          <div class="card border border-light-subtle rounded-4">
-            <div class="card-body p-3 p-md-4 p-xl-5">
-              <div class="row">
-                <div class="col-12">
-                  <div class="mb-5">
-                    <div class="text-center mb-4">
-                      <a href="{{ route('home')}}">
-                        <img src="{{ asset('images/img_logo.jpeg')}}" alt="BootstrapBrain Logo" width="50" height="57">
-                        {{ config('app.name')}}
-                      </a>
-                    </div>
-                    <h4 class="text-center">Soyez le bienvenue chez nous !</h4>
-                  </div>
-                </div>
-              </div>
-              <form action="{{ route('login')}}" method="POST">
-
-                @csrf
-                {{--  composent input --}}
-
-                <x-input name="email" label="Email" type="email" />
-
-                <x-input name="password" label="Mot de passe " type="password" />
-
-                <div class="col-12 mt-3">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" name="remember" value="true" id="remember">
-                      <label class="form-check-label" for="remember">Se souvenir de moi</label>
-                    </div>
-                  </div>
-
-                <div class="col-12 mt-3">
-                    <div class="d-grid">
-                      <button class="btn custom-btn w-100" type="submit">Se connecter</button>
-                    </div>
-                  </div>
-
-
-              </form>
-              <div class="row mx-2">
-                <div class="col-12">
-                  <div class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-end">
-                    <a href="{{ route('register')}}" class="link-secondary text-decoration-none">S'inscrire maintenant</a>
-                  </div>
-                </div>
-              </div>
-              </div>
+<div class="container vh-100 d-flex justify-content-center align-items-center">
+    <div class="row justify-content-center w-100">
+        <div class="col-lg-4 col-md-6 col-sm-8">
+            <div class="text-center mb-5">
+                <a href="{{ route('home') }}">
+                    <img src="{{ asset('images/img_logo.jpeg') }}" alt="BootstrapBrain Logo" width="50" height="57">
+                </a>
+                <h4 class="text-center">Sign in</h4>
             </div>
-          </div>
+            <form action="{{ route('login') }}" method="POST">
+                @csrf
+                {{-- Composant input --}}
+                <x-input name="email" label="Email" type="email" />
+                <x-input name="password" label="Mot de passe" type="password" />
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="remember" name="remember" value="remember-me">
+                        <label class="form-check-label" for="remember">Se souvenir de moi</label>
+                    </div>
+                    <a href="{{ route('register') }}" class="text-decoration-none">S'inscrire maintenant</a>
+                </div>
+
+                <button class="btn custom-btn w-100" type="submit">Se connecter</button>
+            </form>
+            <p class="text-center mt-3">Copyright © 2024 ISIP'A KOMORIKO</p>
         </div>
-      </div>
     </div>
-  </section>
+</div>
 
 @endsection

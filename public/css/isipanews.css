@@ -735,6 +735,44 @@ strong {
 .slick-testimonial .slick-dots .slick-active {
   background: var(--dark-color);
 }
+/*---------------------------------------
+  SHOW
+-----------------------------------------*/
+.article-header {
+    background-color: #f8f9fa;
+    padding: 20px;
+    padding-top: 200px;
+    text-align: center;
+}
+
+.article-header img {
+    max-width: 100%;
+    height: auto;
+}
+
+.article-content {
+    margin-top: 20px;
+}
+
+.article-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.article-meta {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.article-body {
+    margin-top: 20px;
+}
+
+.article-body img {
+    max-width: 100%;
+    margin: 20px 0;
+}
+
 
 /*---------------------------------------
   SECTION
