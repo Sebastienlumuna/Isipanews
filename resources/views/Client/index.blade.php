@@ -1,89 +1,47 @@
- @extends('client.clientlayout')
-
- @section('title', 'Accueil')
-
- @section('content')
-
- <main>
-    <section class="slick-slideshow">
-        <div class="slick-custom">
-            <img src="{{ asset('images/slideshow/header.jpg')}}" class="img-fluid" alt="">
-
-            <div class="slick-bottom">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 col-10">
-                            <h1 class="slick-title">Soyez toujours informez</h1>
-
-                            <p class="lead text-white mt-lg-3 mb-lg-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo sebene toujours.</p>
-
-                            <a href="#" class="btn custom-btn">Nous suivre</a>
-                        </div>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affichage des Posts</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="card">
+                    <img src="{{ asset('images/slideshow/oip_1.jpg')}}"  class="card-img-top" alt="Post 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Tour d'horizon des façades</h5>
+                        <p class="card-text">Présentation du fonctionnement des façades, leurs avantages et inconvénients.</p>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="slick-custom">
-            <img src="{{ asset ('images/slideshow/ellipse_1.jpg')}}" class="img-fluid" alt="">
-
-            <div class="slick-bottom">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 col-10">
-                            <h1 class="slick-title">Monent Event</h1>
-
-                            <p class="lead text-white mt-lg-3 mb-lg-5">Lorem ipsum dolorus ration cody-lannom-G95AReIh_Ko-unsplash kukzueuzieuziuezieuziuzi</p>
-
-                            <a href="#" class="btn custom-btn">Voir les Event</a>
-                        </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="card">
+                    <img src="image2.jpg" class="card-img-top" alt="Post 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Valider des numéros de téléphone</h5>
+                        <p class="card-text">Simplifier la validation des numéros de téléphone dans une application Laravel.</p>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="slick-custom">
-            <img src="{{ asset('images/slideshow/oip_1.jpg')}}" class="img-fluid" alt="">
-
-            <div class="slick-bottom">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 col-10">
-                            <h1 class="slick-title">Toujours premier en RDC</h1>
-
-                            <p class="lead text-white mt-lg-3 mb-lg-5">Tooplate is one of the best HTML CSS template websites for everyone.</p>
-
-                            <a href="{{ route('contact')}}" class="btn custom-btn">Nous suivre</a>
-                        </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="card">
+                    <img src="image3.jpg" class="card-img-top" alt="Post 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Retour sur la conférence API Platform 2024</h5>
+                        <p class="card-text">Résumé de la conférence sur les API tenue en septembre 2024.</p>
                     </div>
                 </div>
             </div>
+            <!-- Ajoutez d'autres colonnes de posts ici -->
         </div>
+    </div>
 
-    </section>
-
-    {{-- end slide-bar --}}
-
-    {{-- content home --}}
-
-
-
-    <section class="about section-padding">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-12 text-center">
-                    <h2 class="mb-5"><span>Nos</span> Actualités</h2>
-                </div>
-
-
-                <section class="container">
-
-                    <!-- Example post (repeat for each post) -->
-
-                    <x-post :posts="$posts"/>
-          </section>
-</main>
-
-
- @endsection
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

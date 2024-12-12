@@ -35,6 +35,10 @@ class ClientController extends Controller
 
         return view('client.profil');
     }
+    public function index(){
+
+        return view('client.index');
+    }
 
     public function updatepassword(Request $request): RedirectResponse
     {

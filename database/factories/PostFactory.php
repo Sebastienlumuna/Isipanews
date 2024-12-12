@@ -12,7 +12,7 @@ class PostFactory extends Factory
 {
     /**
      * Define the model's default state.
-     *
+     *  
      * @return array<string, mixed>
      */
     public function definition(): array
@@ -24,7 +24,7 @@ class PostFactory extends Factory
         return [
 
             'Titre' => fake()->unique()->sentence,
-            'categorie_id' => 1,
+            'categorie_id' => 3,
             'extrait'=> Str::limit($contenu, 100),
             'Image' => fake()->imageUrl,
             'contenu' => $contenu,

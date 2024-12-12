@@ -10,6 +10,10 @@ class Categorie extends Model
 {
     use HasFactory;
 
+    public function getRouteKeyName(): string
+    {
+        return 'name';
+    }
     protected $fillable = [
         'name',
     ];
@@ -19,6 +23,6 @@ class Categorie extends Model
         return $this->hasMany(Post::class);
     }
 
- 
+
 
 }

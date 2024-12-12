@@ -7,13 +7,15 @@
                             <img src="{{ $post->Image }}" class="card-img-top" alt="...">
                         </a>
                             <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <small class="text-muted"> {{$post->updated_at->format('d F Y H:i')}}</small>
+                                    <small class="text-danger"><a href="{{ route('postbycategorie', ['categorie' => $post->categorie])}}" class="">{{ $post->categorie ? $post->categorie->name : 'N/A' }}</a></small>
+                                </div>
                               <h5 class="card-title fw-bold"><a href="{{ route('show', ['post' => $post]) }}">{{ $post->Titre}}</a></h5>
-                              <p class="card-text"><span class="badge bg-primary">{{ $post->categorie ? $post->categorie->name : 'N/A' }}</span> <span class="text-muted">Publié le {{$post->updated_at}} </span></p>
                                <a href="{{ route('show', ['post' => $post]) }}"><p class="card-text"> {{ $post->extrait }}...</p></a>
                             </div>
                           </div>
-                        </div>
+                        </div>  
                       @endforeach
 
         </div>
-

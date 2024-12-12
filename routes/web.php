@@ -30,7 +30,7 @@ Route::get('/register', [RegisterController::class, 'registerform'])->name('regi
 Route::post('/register', [RegisterController::class, 'register']);
 
 
- // Route::get('/home', [ClientController::class, 'index'])->name('Accueil');
+//Route::get('/index', [ClientController::class, 'index'])->name('index');
 Route::get('/profil', [ClientController::class, 'profilview'])->name('profil');
 Route::post('/update', [ClientController::class, 'updatepassword'])->name('update');
 Route::put('/update', [ClientController::class, 'updateprofil']);
@@ -44,5 +44,6 @@ Route::get('/contact', [Pagecontroller::class, 'contact'])->name('contact');
 Route::get('/', [Pagecontroller::class, 'home'])->name('home');
 
 Route::get('/{post}', [Pagecontroller::class, 'show'])->name('show');
+Route::get('/categorie/{categorie}', [Pagecontroller::class, 'postbycategorie'] )->name('postbycategorie');
 
 

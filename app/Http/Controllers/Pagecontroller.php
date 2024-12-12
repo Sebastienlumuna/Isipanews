@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Categorie;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -27,6 +28,15 @@ class Pagecontroller extends Controller
             'post' => $post,
         ]
     );
+    }
+
+    public function postbycategorie(Categorie  $categorie): View
+    {
+
+        return view('home.home',  [
+            'posts' => $categorie->posts()->paginate(9)
+        ]);
+
     }
     public function campus(){
         return view('home.campus');
