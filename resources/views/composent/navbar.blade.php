@@ -67,6 +67,12 @@
                     </a>
                   </li>
                   <li>
+                    <a class="dropdown-item d-flex align-items-center" href="{{ route('admin.post.index')}}">
+                        <i class='bx bx-user' ></i>
+                 administration
+                    </a>
+                  </li>
+                  <li>
                     <a class="dropdown-item d-flex align-items-center" href="{{ route('logout')}}" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class='bx bx-log-out' ></i>
                         Se deconnecter

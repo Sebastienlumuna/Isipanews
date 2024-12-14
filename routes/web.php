@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Client\ClientController;
@@ -39,7 +40,9 @@ Route::get('/campus', [Pagecontroller::class, 'campus'])->name('campus');
 
 Route::get('/contact', [Pagecontroller::class, 'contact'])->name('contact');
 
-
+Route::resource('/admin/posts', AdminController::class)
+    ->except('show')
+    ->names('admin.post');
 
 Route::get('/', [Pagecontroller::class, 'home'])->name('home');
 
