@@ -103,24 +103,23 @@
                                 <td><a href="{{ route('show', ['post' => $post]) }}" target="_blank">Voir..</a></td>
                                 <td>
                                   <div class="form-button-action">
-                                    <button
-                                      type="button"
+                                    <a
+                                      href="#"
                                       data-bs-toggle="tooltip"
                                       class="btn btn-link btn-primary btn-lg"
                                       title="Edit"
                                     >
                                       <i class="bi bi-pencil-fill text-white"></i>
-                                    </button>
-                                    <button
-                                      type="button"
-                                      data-bs-toggle="tooltip"
-                                      class="btn btn-link btn-danger "
+                                    </a>
+                                    <a
+                                      href="#"
+                                        data-bs-toggle="modal" data-bs-target="#exampleModalremove" data-bs-toggle="modal" data-bs-target="#exampleModalremove"
+                                      class="btn btn-link btn-danger"
                                       title="Remove"
                                     >
                                       <i class="bi bi-trash-fill"></i>
-                                    </button>
-                                  </div>
-                                </td>
+                                    </a>
+                                  </div>                                </td>
                               </tr>
                             @endforeach
 
@@ -136,4 +135,27 @@
       </div>
     </div>
   </div>
-  <x-modal/>
+  <!-- Modal -->
+<x-modal/>
+  <div class="modal fade" id="exampleModalremove" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Suprimmer</h1>
+
+        </div>
+        <div class="modal-body">
+          Voulez-vous vous surpprimez le post ?
+        </div>
+        <div class="modal-footer">
+          <form method="POST" action="{{ route('admin.post.destroy', ['post' => $post]) }}">
+            @csrf
+            <button type="submit" class="btn btn-danger">suprimmer</button>
+        </form>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
