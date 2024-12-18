@@ -68,70 +68,55 @@
 
         <!-- Table Section -->
         <div class="container">
-          <div class="page-inner">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="card">
-                  <div class="card-header">
-                    <div class="d-flex align-items-center">
-
-                      <button class="btn btn-primary btn-round ms-auto">
-                        <i class="bi bi-plus"></i> Add Row
-                      </button>
+            <div class="page-inner">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="card-header">
+                      <div class="d-flex align-items-center">
+                        <a href="{{ route('admin.post.create')}}" class="btn btn-primary btn-round ms-auto">
+                          <i class="bi bi-plus"></i> Add Row
+                        </a>
+                      </div>
                     </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="table-responsive">
-                      <table
-                        id="add-row"
-                        class="display table table-striped table-hover"
-                      >
-                        <thead>
-                          <tr>
-                            <th>Titre</th>
-                            <th>Contenue</th>
-                            <th>lien</th>
-                            <th style="width: 10%">Action</th>
-                          </tr>
-                        </thead>
-
-                        <tbody>
-                            @foreach ($posts as $post  )
+                    <div class="card-body">
+                      <!-- Table responsive container -->
+                      <div class="table-responsive">
+                        <table id="add-row" class="table table-striped table-hover">
+                          <thead>
                             <tr>
-                                <td> {{ $post->Titre}} </td>
-                                <td> {{ $post->extrait}}</td>
-                                <td><a href="{{ route('show', ['post' => $post]) }}" target="_blank">Voir..</a></td>
-                                <td>
-                                  <div class="form-button-action">
-                                    <a
-                                      href="#"
-                                      data-bs-toggle="tooltip"
-                                      class="btn btn-link btn-primary btn-lg"
-                                      title="Edit"
-                                    >
-                                      <i class="bi bi-pencil-fill text-white"></i>
-                                    </a>
-                                    <a
-                                      href="#"
-                                        data-bs-toggle="modal" data-bs-target="#exampleModalremove" data-bs-toggle="modal" data-bs-target="#exampleModalremove"
-                                      class="btn btn-link btn-danger"
-                                      title="Remove"
-                                    >
-                                      <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                  </div>                                </td>
-                              </tr>
-                            @endforeach
+                              <th>Titre</th>
+                              <th>Lien</th>
+                              <th style="width: 10%">Action</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            @foreach ($posts as $post)
+                            <tr>
+                              <td>{{ $post->Titre }}</td>
 
-                        </tbody>
-                      </table>
+                              <td><a href="{{ route('show', ['post' => $post]) }}" target="_blank">Voir..</a></td>
+                              <td>
+                                <div class="form-button-action">
+                                  <a href="#" class="btn btn-link" title="Edit">
+                                    <i class="bi bi-pencil-fill text-primary"></i>
+                                  </a>
+                                  <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModalremove" class="btn btn-link" title="Remove">
+                                    <i class="bi bi-trash-fill text-danger"></i>
+                                  </a>
+                                </div>                              </td>
+                            </tr>
+                            @endforeach
+                          </tbody>
+                        </table>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+
       </div>
     </div>
   </div>
