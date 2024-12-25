@@ -25,6 +25,15 @@
                       Mon profil
                     </a>
                   </li>
+                  @if (Auth::user()->isAdmin())
+                  <li>
+                    <a class="dropdown-item d-flex align-items-center" href="{{ route('admin.post.index')}}">
+                        <i class='bx bx-user' ></i>
+                 administration
+                    </a>
+                  </li>
+
+                  @endif
                   <li>
                     <a class="dropdown-item d-flex align-items-center" href="{{ route('logout')}}" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class='bx bx-log-out' ></i>
@@ -66,12 +75,15 @@
                    Mon profil
                     </a>
                   </li>
+                  @if (Auth::user()->isAdmin())
                   <li>
                     <a class="dropdown-item d-flex align-items-center" href="{{ route('admin.post.index')}}">
                         <i class='bx bx-user' ></i>
                  administration
                     </a>
                   </li>
+
+                  @endif
                   <li>
                     <a class="dropdown-item d-flex align-items-center" href="{{ route('logout')}}" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class='bx bx-log-out' ></i>
