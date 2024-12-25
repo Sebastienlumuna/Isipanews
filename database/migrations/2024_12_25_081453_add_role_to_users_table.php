@@ -12,10 +12,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('user', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
             $role = array_column(Role::cases(), 'value');
             $table->enum('role', $role)->after('email')->default(Role::Visitor->value);
+
         });
     }
 
@@ -24,8 +25,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('user', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
+            $table->dropColumn('role');
         });
     }
 };
