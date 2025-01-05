@@ -11,16 +11,15 @@
             <div class="article-header">
                 <h1 class="article-title">{{ $post->Titre}}</h1>
                 <p class="article-meta">Publié le {{$post->updated_at}}</p>
-                <img src="{{ $post->Image }}" alt="Valider des numéros de téléphone">
+                <img src="{{ str_starts_with($post->Image, 'http') ? $post->Image : asset('storage/'. $post->Image ) }}" alt="..." width="800" height="800">
             </div>
 
             <!-- Article Content -->
             <div class="article-content">
                 <div class="article-body">
-                    <p>
+                    <p style="text-align: justify;">
                         {!! nl2br(e($post->Contenu)) !!}
-                    </p>
-                    <!-- Add more paragraphs as needed -->
+                    </p>                    <!-- Add more paragraphs as needed -->
                 </div>
             </div>
         </div>

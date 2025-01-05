@@ -35,7 +35,12 @@
 
 </head>
   <body>
-
+    
+    @if(session('success'))
+    <div class="alert alert-success text-center mx-5" role="alert">
+        {{ session('success') }}
+      </div>
+    @endif
         @include('composent.navbar')
 
 

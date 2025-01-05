@@ -77,7 +77,7 @@
                   </li>
                   @if (Auth::user()->isAdmin())
                   <li>
-                    <a class="dropdown-item d-flex align-items-center" href="{{ route('admin.post.index')}}">
+                    <a class="dropdown-item d-flex align-items-center" href="{{ route('admin.post.index')}}" target="_blank">
                         <i class='bx bx-user' ></i>
                  administration
                     </a>

@@ -4,7 +4,7 @@
                 <div class="col mb-3">
                     <div class="card h-100">
                         <a href="{{ route('show', ['post' => $post]) }}">
-                            <img src="{{ $post->Image }}" class="card-img-top" alt="...">
+                            <img src="{{ str_starts_with($post->Image, 'http') ? $post->Image : asset('storage/'. $post->Image ) }}" class="card-img-top" alt="..." width="400" height="300">
                         </a>
                             <div class="card-body">
                                 <div class="d-flex justify-content-between mb-2">
@@ -15,7 +15,7 @@
                                <a href="{{ route('show', ['post' => $post]) }}"><p class="card-text"> {{ $post->extrait }}...</p></a>
                             </div>
                           </div>
-                        </div>  
+                        </div>
                       @endforeach
 
         </div>

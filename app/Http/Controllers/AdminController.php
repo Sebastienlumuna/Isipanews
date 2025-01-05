@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PostRequest;
+use Illuminate\Support\Str;
 use App\Models\Categorie;
+use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -40,9 +43,24 @@ class AdminController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
         //
+        $validated = $request->validated();
+
+       if($request->hasFile('Image')) {
+           $validated['Image'] = $request->file('Image')->store('images');
+       }
+
+       $validated['extrait'] = Str::Limit($validated['Contenu'], 100);
+
+       $validated['user_id'] = auth()->id();
+
+
+
+       $post = Post::create($validated);
+
+       return redirect()->route('show', ['post' => $post])->with('success', 'Votre article a bien été publié');
     }
 
 

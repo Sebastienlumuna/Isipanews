@@ -21,7 +21,7 @@
             <!-- Champ Catégorie -->
             <div class="mb-3">
                 <label for="categorie" class="form-label">Catégorie</label>
-                <select class="form-select @error('categorie') is-invalid @enderror" id="categorie" name="categorie" required>
+                <select class="form-select @error('categorie_id') is-invalid @enderror" id="categorie" name="categorie_id" required>
                     <option value="" disabled selected>Choisissez une catégorie</option>
                     @foreach($categories as $categorie)
                     <option value="{{ $categorie->id }}">{{ $categorie->name }}</option>
