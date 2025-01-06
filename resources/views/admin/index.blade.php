@@ -98,7 +98,7 @@
                               <td><a href="{{ route('show', ['post' => $post]) }}" target="_blank">Voir..</a></td>
                               <td>
                                 <div class="form-button-action">
-                                  <a href="#" class="btn btn-link" title="Edit">
+                                  <a href="{{ route('admin.post.edit', ['post' => $post])}}" class="btn btn-link" title="Edit">
                                     <i class="bi bi-pencil-fill text-primary"></i>
                                   </a>
                                   <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModalremove" class="btn btn-link" title="Remove">
