@@ -13,8 +13,6 @@
             @csrf
             <button type="submit" class="btn btn-danger">Deconnexion</button>
         </form>
-
-
         </div>
       </div>
     </div>
