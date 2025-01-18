@@ -10,6 +10,7 @@ use App\Models\Categorie;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
 class AdminController extends Controller
@@ -50,6 +51,7 @@ class AdminController extends Controller
         return $this->form($post);
     }
 
+    // centralisé l'utilisation du fomulaire
     protected function form(Post $post = new  Post): View
     {
         $categories = Categorie::all();
@@ -64,32 +66,47 @@ class AdminController extends Controller
      */
     public function store(PostRequest $request): RedirectResponse
     {
-        //
-        $validated = $request->validated();
-
-       if($request->hasFile('Image')) {
-           $validated['Image'] = $request->file('Image')->store('images');
-       }
-
-       $validated['extrait'] = Str::Limit($validated['Contenu'], 100);
-
-       $validated['user_id'] = auth()->id();
-
-
-
-       $post = Post::create($validated);
-
-       return redirect()->route('show', ['post' => $post])->with('success', 'Votre article a bien été publié');
+        // utilise save
+        $post = new Post();
+      return  $this->save($post, $request);
     }
-
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, Post $post)
     {
-        //
+        // utilise save
+        return  $this->save($post, $request);
     }
+
+
+    // centralisationd de la creation et de la modification
+
+    protected function save(Post $post, PostRequest $request): RedirectResponse
+    {
+        $validated = $request->validated();
+
+        if($request->hasFile('Image')){
+            // supprimer l'ancienne image
+            if($post->exists &&  $post->Images){
+                Storage::delete($post->Images);
+            }
+            $validated['Image'] = $request->file('Image')->store('images');
+        }
+
+        $validated['extrait'] = Str::Limit($validated['Contenu'], 100);
+
+        $validated['user_id'] = auth()->id();
+
+        $post->fill($validated);
+        $post->save();
+
+        return redirect()->route('show', ['post'=> $post])
+        ->with('success',  ($post->wasRecentlyCreated ? 'article publier avec succès' : 'article modifier avec succès' ));
+
+    }
+
 
     /**
      * Remove the specified resource from storage.
