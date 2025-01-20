@@ -60,6 +60,13 @@
           </div>
         </div>
 
+        @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+            </div>
+
+        @endif
+
         <!-- Table Section -->
         <div class="container">
             <div class="page-inner">
@@ -127,8 +134,10 @@
           Voulez-vous vous surpprimez le post ?
         </div>
         <div class="modal-footer">
-          <form method="POST" action="{{ route('admin.post.destroy', ['post' => $post]) }}">
+          <form method="POST" action="{{ route('admin.post.destroy', ['post' => $post->id]) }}">
             @csrf
+            @method('DELETE')
+
             <button type="submit" class="btn btn-danger">suprimmer</button>
         </form>
         </div>

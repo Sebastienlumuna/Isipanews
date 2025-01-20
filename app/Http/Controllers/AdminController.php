@@ -113,6 +113,12 @@ class AdminController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        // supprimer l'ancienne image
+            Storage::delete($post->Image);
+            $post->delete();
+
+            return redirect('/');
+
+
     }
 }

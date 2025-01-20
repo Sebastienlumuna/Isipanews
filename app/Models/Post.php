@@ -29,7 +29,7 @@ class Post extends Model
 
     public function getRouteKeyName(): string
     {
-        return 'Titre';
+        return 'id';
     }
 
     public function categorie(): BelongsTo
