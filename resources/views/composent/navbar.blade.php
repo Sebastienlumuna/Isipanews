@@ -55,7 +55,7 @@
                     <a class="nav-link @if(Request::route()->getname() == 'home') active @endif" href="{{ route('home')}}">Actualités</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login')}}">Evenements</a>
+                    <a class="nav-link" href="">Evenements</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link @if (Request::route()->getname() == 'contact') active @endif" href="{{ route('contact')}}">Contact</a>
