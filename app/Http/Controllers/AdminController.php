@@ -117,7 +117,7 @@ class AdminController extends Controller
             Storage::delete($post->Image);
             $post->delete();
 
-            return redirect('/');
+            return redirect()->route('admin.post.index')->with('success', 'article supprimer avec succès');
 
 
     }
