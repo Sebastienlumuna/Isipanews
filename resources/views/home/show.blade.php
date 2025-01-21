@@ -10,7 +10,7 @@
             <!-- Article Header -->
             <div class="article-header">
                 <h1 class="article-title">{{ $post->Titre}}</h1>
-                <p class="article-meta">Publié le {{$post->updated_at}}</p>
+                <p class="article-meta">{{$post->updated_at->format('d F Y H:i')}}</p>
                 <img src="{{ str_starts_with($post->Image, 'http') ? $post->Image : asset('storage/'. $post->Image ) }}" alt="..." width="800" height="800">
             </div>
 

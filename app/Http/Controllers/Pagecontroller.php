@@ -15,7 +15,7 @@ class Pagecontroller extends Controller
     // renvoie la vue home
     public function home(): View
     {
-        $posts = Post::with('user', 'categorie')->orderBy('created_at', 'desc')
+        $posts = Post::with('categorie')->orderBy('created_at', 'desc')
         ->paginate(9);
         return view('home.home',
         compact('posts')
