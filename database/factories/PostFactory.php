@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Categorie;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -17,14 +18,14 @@ class PostFactory extends Factory
      */
     public function definition(): array
     {
-
+        $categories = Categorie::inRandomOrder()->first();
         $contenu = fake()->paragraphs(asText: true);
         $created_at = fake()->dateTimeBetween('-1 year');
 
         return [
 
             'Titre' => fake()->unique()->sentence,
-            'categorie_id' => 3,
+            'categorie_id' => $categories->id,
             'extrait'=> Str::limit($contenu, 100),
             'Image' => fake()->imageUrl,
             'contenu' => $contenu,
