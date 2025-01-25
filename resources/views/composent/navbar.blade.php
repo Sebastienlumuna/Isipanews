@@ -5,7 +5,7 @@
         </button>
 
         <a class="navbar-brand" href="{{ route('home')}}">
-            <img src="{{ asset('images/img_logo.jpeg')}}" alt="Logo" width="40" height="60" class="d-inline-block align-text-top-center">
+            <img src="{{ asset('images/isipa_png.png')}}" alt="Logo" width="40" height="60" class="d-inline-block align-text-top-center">
             {{ config('app.name')}}
         </a>
 
@@ -14,7 +14,7 @@
             @auth
             <div class="dropdown d-block">
                 <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                  <img src="{{ asset('images/ellipse_1.jpeg')}}" alt="Profile" class="rounded-circle" height="30" width="30">
+                  <img src="{{ asset('images/USERS.jpg')}}" alt="Profile" class="rounded-circle" height="30" width="30">
                   <span class="d-none d-md-block dropdown-toggle ps-2">{{ Auth::user()->name }} </span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
@@ -65,7 +65,7 @@
                 @auth
             <div class="dropdown d-block">
                 <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                  <img src="{{ asset('images/ellipse_1.jpeg')}}" alt="Profile" class="rounded-circle" height="30" width="30">
+                  <img src="{{ asset('images/USERS.jpg')}}" alt="Profile" class="rounded-circle" height="30" width="30">
                   <span class="d-none d-md-block dropdown-toggle ps-2">{{ Auth::user()->name }} </span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
