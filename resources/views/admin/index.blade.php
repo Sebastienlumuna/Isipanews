@@ -90,7 +90,7 @@
                           <tbody>
                             @foreach ($posts as $post)
                             <tr>
-                              <td>{{ $post->Titre }}</td>
+                              <td>{{ $post->titre }}</td>
                               <td><a href="{{ route('show', ['post' => $post]) }}" target="_blank">Voir..</a></td>
                               <td>
                                 <div class="form-button-action">

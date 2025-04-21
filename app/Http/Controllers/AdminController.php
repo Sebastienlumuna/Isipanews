@@ -87,15 +87,15 @@ class AdminController extends Controller
     {
         $validated = $request->validated();
 
-        if($request->hasFile('Image')){
+        if($request->hasFile('image')){
             // supprimer l'ancienne image
             if($post->exists &&  $post->Images){
                 Storage::delete($post->Images);
             }
-            $validated['Image'] = $request->file('Image')->store('images');
+            $validated['image'] = $request->file('image')->store('images');
         }
 
-        $validated['extrait'] = Str::Limit($validated['Contenu'], 100);
+        $validated['extrait'] = Str::Limit($validated['contenu'], 100);
 
         $validated['user_id'] = auth()->id();
 

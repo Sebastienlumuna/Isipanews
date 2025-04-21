@@ -9,6 +9,7 @@ use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -32,6 +33,7 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
 
+        $validated['id'] = Str::uuid(); // Génère un UUID
         $validated['password'] = Hash::make($validated['password']);
       $user = User::create($validated);
 

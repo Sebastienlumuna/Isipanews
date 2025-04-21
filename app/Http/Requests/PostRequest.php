@@ -23,9 +23,9 @@ class PostRequest extends FormRequest
     {
         return [
             //
-            'Titre' => ['required', 'string', 'between:3,100'],
-            'Contenu' => ['required', 'string'],
-            'Image' => ['required', 'image'],
+            'titre' => ['required', 'string', 'between:3,100'],
+            'contenu' => ['required', 'string'],
+            'image' => ['required', 'image'],
             'categorie_id' => ['required', 'integer', 'exists:categories,id'],
 
         ];

@@ -16,9 +16,9 @@
 
             <!-- Champ Titre -->
             <div class="mb-3">
-                <label for="Titre" class="form-label">Titre</label>
-                <input type="text" class="form-control @error('Titre') is-invalid @enderror" id="Titre" name="Titre" placeholder="Titre du post" required value="{{ old('Titre', $post->Titre)}}">
-                @error('Titre')
+                <label for="titre" class="form-label">Titre</label>
+                <input type="text" class="form-control @error('titre') is-invalid @enderror" id="titre" name="titre" placeholder="Titre du post" required value="{{ old('Titre', $post->Titre)}}">
+                @error('titre')
                 <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
@@ -40,22 +40,22 @@
             <!-- Champ Contenu -->
             <div class="mb-3">
                 <label for="Contenu" class="form-label">Contenu</label>
-                <textarea class="form-control @error('Contenu') is-invalid @enderror" id="Contenu" name="Contenu" rows="5" placeholder="Écrivez ici le contenu de votre post..." required>{{ old('Contenu', $post->Contenu) }} </textarea>
-                @error('Contenu')
+                <textarea class="form-control @error('contenu') is-invalid @enderror" id="contenu" name="contenu" rows="5" placeholder="Écrivez ici le contenu de votre post..." required>{{ old('Contenu', $post->Contenu) }} </textarea>
+                @error('contenu')
                 <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
 
             <!-- Champ Image -->
             <div class="mb-3">
-                <label for="Image" class="form-label">Image</label>
-                @if(isset($post->Image))
+                <label for="image" class="form-label">Image</label>
+                @if(isset($post->image))
                     <div>
-                        <img src="{{ asset('storage/' . $post->Image) }}" alt="Image actuelle" style="max-width: 200px; height: auto; display: block; margin-bottom: 10px;">
+                        <img src="{{ asset('storage/' . $post->image) }}" alt="Image actuelle" style="max-width: 200px; height: auto; display: block; margin-bottom: 10px;">
                     </div>
                 @endif
-                <input type="file" class="form-control @error('Image') is-invalid @enderror" id="Image" name="Image" accept="image/*" required>
-                @error('Image')
+                <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image" accept="image/*" required>
+                @error('image')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
