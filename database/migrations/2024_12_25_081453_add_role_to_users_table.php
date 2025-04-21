@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             //
             $role = array_column(Role::cases(), 'value');
-            $table->enum('role', $role)->after('email')->default(Role::Visitor->value);
+            $table->string('role')->default(Role::Visitor->value)->after('email');
 
         });
     }
